@@ -9,6 +9,7 @@
 // @connect      *
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js
 // @require      https://raw.githubusercontent.com/Thanatos-AKA/Chatbox_Buddy/refs/heads/main/Functions.js
+// @require      https://raw.githubusercontent.com/Thanatos-AKA/Chatbox_Buddy/refs/heads/main/EVENTS.js
 // ==/UserScript==
 
 (function () {
@@ -50,24 +51,6 @@ function initFloatingPanel(chatBox) {
     title.innerText = "💬 Select Event and Role:";
     title.style.marginBottom = "8px";
     title.style.fontWeight = "bold";
-
-    const events = {
-        "event1": {
-            "role1": "This is event1 role1 reply",
-            "role2": "This is event1 role2 reply",
-            "role3": "This is event1 role3 reply"
-        },
-        "event2": {
-            "role1": "This is event2 role1 reply",
-            "role2": "This is event2 role2 reply",
-            "role3": "This is event2 role3 reply"
-        },
-        "event3": {
-            "role1": "This is event3 role1 reply",
-            "role2": "This is event3 role2 reply",
-            "role3": "This is event3 role3 reply"
-        }
-    };
 
     const eventSelect = document.createElement("select");
     eventSelect.style.marginBottom = "8px";
