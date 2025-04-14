@@ -105,7 +105,7 @@ function initFloatingPanel(chatBox) {
 
     const title = document.createElement("div");
     title.classList.add("chat-buddy-title");
-    title.innerText = "💬Chatbox buddy:";
+    title.innerText = "💬 Select Event, Role, and Task:";
 
     const eventSelect = createOrUpdateDropdown(null, Object.keys(events), "Select Event");
     const roleSelect = createOrUpdateDropdown(null, [], "Select Role", true);
