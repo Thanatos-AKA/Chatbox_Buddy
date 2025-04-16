@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chatbox_Buddy
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.7
 // @description  This script assists users in filling out the chatbox
 // @match        https://t.corp.amazon.com/*
 // @run-at       document-idle
@@ -11,34 +11,42 @@
 // ==/UserScript==
 
 const events = {
-    "option1": {
-        "event1": {
-            "task1": "This is rely option1, event1, task1 reply on IG",
-            "task2": "This is rely option1, event1, task2 reply on IG"
+    "Shredding_event": {
+        "Audit_Czar": {
+            "Task1": "This is Audit_Czar reply for task1",
+            "Task2": "This is Audit_Czar reply for task2"
         },
-        "event2": {
-            "task1": "This is rely option1, event2, task1 reply on IG",
-            "task2": "This is rely option1, event2, task2 reply on IG"
+        "Operator": {
+            "Task3": "This is Operator reply for task3",
+            "Task4": "This is Operator reply for task4"
+        },
+        "Trustee": {
+            "Task5": "This is Trustee reply for task5",
+            "Task6": "This is Trustee reply for task6"
+        },
+        "Verifier": {
+            "Task7": "This is Verifier reply for task7",
+            "Task8": "This is Verifier reply for task8"
         }
     },
-    "option2": {
-        "event1": {
+    "event2": {
+        "role1": {
             "task1": "This is rely option2, event1, task1 reply on IG",
             "task2": "This is rely option2, event1, task2 reply on IG"
         },
-        "event2": {
-            "task1": "This is rely option2, event2, task1 reply on IG",
-            "task2": "This is rely option2, event2, task2 reply on IG"
+        "role2": {
+            "task3": "This is rely option2, event2, task1 reply on IG",
+            "task4": "This is rely option2, event2, task2 reply on IG"
         }
     },
-    "option3": {
-        "event1": {
+    "event3": {
+        "role1": {
             "task1": "This is rely option3, event1, task1 reply on IG",
             "task2": "This is rely option3, event1, task2 reply on IG"
         },
-        "event2": {
-            "task1": "This is rely option3, event2, task1 reply on IG",
-            "task2": "This is rely option3, event2, task2 reply on IG"
+        "role2": {
+            "task3": "This is rely option3, event2, task1 reply on IG",
+            "task4": "This is rely option3, event2, task2 reply on IG"
         }
     }
 };
