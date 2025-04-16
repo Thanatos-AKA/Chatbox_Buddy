@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.5
 // @description  This script assists users in filling out the chatbox
-// @match        https://www.instagram.com/direct/t/*
+// @match        https://t.corp.amazon.com/*
 // @run-at       document-idle
 // @grant        GM_xmlhttpRequest
 // @connect      *
@@ -88,24 +88,25 @@ const events = {
     document.head.appendChild(style);
 
     const observer = new MutationObserver((mutations, obs) => {
-        const chatBox = document.querySelector("div[contenteditable='true']");
-        if (chatBox) {
-            console.log("Chatbox detected");
-            initFloatingPanel(chatBox);
-            obs.disconnect();
+        const communicationBox = document.getElementById("communication");
+
+        if (communicationBox) {
+            console.log("Communication box detected");
+            initFloatingPanel(communicationBox);
+            obs.disconnect(); // Stop observing once the element is found and handled
         }
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
 })();
 
-function initFloatingPanel(chatBox) {
+function initFloatingPanel(communicationBox) {
     const panel = document.createElement("div");
     panel.classList.add("chat-buddy-panel");
 
     const title = document.createElement("div");
     title.classList.add("chat-buddy-title");
-    title.innerText = "💬Chatbox buddy:";
+    title.innerText = "💬 Select Event, Role, and Task:";
 
     const eventSelect = createOrUpdateDropdown(null, Object.keys(events), "Select Event");
     const roleSelect = createOrUpdateDropdown(null, [], "Select Role", true);
@@ -138,7 +139,7 @@ function initFloatingPanel(chatBox) {
                 const btn = document.createElement("button");
                 btn.classList.add("chat-buddy-button");
                 btn.innerText = reply;
-                btn.onclick = () => fillChatbox(chatBox, reply);
+                btn.onclick = () => fillChatbox(communicationBox, reply);
                 replyContainer.appendChild(btn);
             } else {
                 console.error("Reply is not a string:", reply);
